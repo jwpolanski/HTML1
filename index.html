@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CWP · Asystent FAQ</title>
+<title>Albatros · Asystent FAQ</title>
 <style>
   :root{
     --orange-lt:#FF8A3D;
@@ -116,7 +116,7 @@
       </button>
       <div class="logo" id="logoSlot"></div>
       <div class="brand">
-        <h1>CWP Asystent</h1>
+        <h1>Albatros Asystent</h1>
         <p>Firmowe FAQ — zapytaj o cokolwiek</p>
       </div>
       <div class="status"><span class="dot"></span>online</div>
@@ -128,7 +128,6 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12l16-7-7 16-2-7-7-2z" fill="#fff"/></svg>
       </button>
     </div>
-    <div class="foot">CWP · napędzane przez n8n + AI</div>
   </div>
 <script>
 /* ============================================================
@@ -140,34 +139,8 @@ let SESSION_ID = "web-" + Math.random().toString(36).slice(2, 10);
 
 /* ---- Lew (biały lineart, rysowany proceduralnie) ---- */
 function lion(px){
-  const cx=32, cy=32, rIn=12.5, rOut=19.5, N=11;
-  let d="";
-  for(let i=0;i<N;i++){
-    const a0=(i/N)*2*Math.PI - Math.PI/2;
-    const a1=((i+1)/N)*2*Math.PI - Math.PI/2;
-    const am=(a0+a1)/2;
-    const x0=(cx+rIn*Math.cos(a0)).toFixed(1), y0=(cy+rIn*Math.sin(a0)).toFixed(1);
-    const xm=(cx+rOut*Math.cos(am)).toFixed(1), ym=(cy+rOut*Math.sin(am)).toFixed(1);
-    const x1=(cx+rIn*Math.cos(a1)).toFixed(1), y1=(cy+rIn*Math.sin(a1)).toFixed(1);
-    if(i===0) d+=`M${x0} ${y0} `;
-    d+=`Q${xm} ${ym} ${x1} ${y1} `;
-  }
-  d+="Z";
-  return `
-  <svg width="${px}" height="${px}" viewBox="0 0 64 64" fill="none" stroke="#fff"
-       stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="${d}"/>
-    <path d="M24 24c-3-2-3-6 0-7 2 1 3 4 2 7"/>
-    <path d="M40 24c3-2 3-6 0-7-2 1-3 4-2 7"/>
-    <path d="M25.5 31.5c1.6-1.6 4-1.6 5.6 0"/>
-    <path d="M32.9 31.5c1.6-1.6 4-1.6 5.6 0"/>
-    <path d="M29.5 36h5l-2.5 3z" fill="#fff" stroke="none"/>
-    <path d="M32 39v2.6"/>
-    <path d="M32 41.6c-1.6 1.7-3.6 1.7-5 .4"/>
-    <path d="M32 41.6c1.6 1.7 3.6 1.7 5 .4"/>
-  </svg>`;
+  return `<img src="https://scontent-ham3-1.cdninstagram.com/v/t51.82787-19/525328405_17910991905186839_614380199542979681_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDc4LmMyIn0&_nc_ht=scontent-ham3-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2gFhWyuoUPbbX9tDoMIHd1HVzBmk1ZxAS8fwETLbOuyrBq7vOCIao62So2lLhhxXU_U&_nc_ohc=txn7caB4VbkQ7kNvwEtqv6h&_nc_gid=l0U6BuqelA6IF-U0oiqn2Q&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af-YqE6jy8o3175veAmvqmZXoFEn9gnD1FzQ5Ii2zi2O7Q&oe=6A436DC4&_nc_sid=10d13b" width="${px}" height="${px}" style="border-radius:50%;object-fit:cover" />`;
 }
-
 const SUGGESTIONS = [
   "Ile dni urlopu okolicznościowego na ślub?",
   "Jestem nowym pracownikiem — od czego zacząć?",
@@ -181,13 +154,13 @@ const DEMO = [
 
 const chat=document.getElementById('chat');
 const input=document.getElementById('input'), send=document.getElementById('send'), back=document.getElementById('back');
-document.getElementById('logoSlot').innerHTML = lion(34);
+document.getElementById('logoSlot').innerHTML = lion(60);
 
 function showWelcome(){
   chat.innerHTML='';
   const w=document.createElement('div');w.className='welcome';
-  w.innerHTML=`<div class="crest">${lion(66)}</div>
-    <h2>Witaj w CWP 👋</h2>
+  w.innerHTML=`<div class="crest">${lion(90)}</div>
+    <h2>Witaj w Albatros👋</h2>
     <p>Jestem firmowym asystentem. Odpowiadam na podstawie naszej bazy wiedzy. O co chcesz zapytać?</p>
     <div class="chips"></div>`;
   chat.appendChild(w);
@@ -199,7 +172,7 @@ function avatar(isUser){
   const d=document.createElement('div');d.className='av';
   d.innerHTML=isUser
     ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>'
-    : lion(24);
+    : lion(40);
   return d;
 }
 function addMsg(text,isUser){
