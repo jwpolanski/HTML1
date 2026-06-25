@@ -139,7 +139,7 @@ let SESSION_ID = "web-" + Math.random().toString(36).slice(2, 10);
 
 /* ---- Lew (biały lineart, rysowany proceduralnie) ---- */
 function lion(px){
-  return `<img src="https://scontent-ham3-1.cdninstagram.com/v/t51.82787-19/525328405_17910991905186839_614380199542979681_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDc4LmMyIn0&_nc_ht=scontent-ham3-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2gFhWyuoUPbbX9tDoMIHd1HVzBmk1ZxAS8fwETLbOuyrBq7vOCIao62So2lLhhxXU_U&_nc_ohc=txn7caB4VbkQ7kNvwEtqv6h&_nc_gid=l0U6BuqelA6IF-U0oiqn2Q&edm=APs17CUBAAAA&ccb=7-5&oh=00_Af-YqE6jy8o3175veAmvqmZXoFEn9gnD1FzQ5Ii2zi2O7Q&oe=6A436DC4&_nc_sid=10d13b" width="${px}" height="${px}" style="border-radius:50%;object-fit:cover" />`;
+  return `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwoDrQwfGBtSdKz_rMM94iiXe-SOX_bizgww&s" width="${px}" height="${px}" style="border-radius:50%;object-fit:cover" />`;
 }
 const SUGGESTIONS = [
   "Ile dni urlopu okolicznościowego na ślub?",
@@ -191,7 +191,7 @@ function hideTyping(){const r=document.getElementById('typingRow');if(r)r.remove
 function demoAnswer(q){
   const low=q.toLowerCase();
   const hit=DEMO.find(d=>d.k.some(k=>low.includes(k)));
-  return hit?hit.a:"Przykro mi, nie znalazłem tego w bazie FAQ. Skontaktuj się z Moniczką, która chętnie pomoże.";
+  return hit?hit.a:"Przykro mi, nie znalazłem tego w bazie FAQ. Skontaktuj się z Moniką, która chętnie pomoże.";
 }
 async function getAnswer(q){
   if(!N8N_WEBHOOK_URL){await new Promise(r=>setTimeout(r,700+Math.random()*600));return demoAnswer(q);}
